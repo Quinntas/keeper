@@ -1,4 +1,4 @@
-import type {client} from "./client.js";
+import {createClient} from "./utils.js";
 
 export type AllowedTypes = string | number | boolean
 
@@ -7,4 +7,4 @@ export interface DurableObjectProps<T extends AllowedTypes> {
     defaultValue: T
 }
 
-export type RPCClient = typeof client
+export type RPCClient = ReturnType<typeof createClient>
